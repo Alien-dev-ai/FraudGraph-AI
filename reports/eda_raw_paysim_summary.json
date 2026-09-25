@@ -1,0 +1,435 @@
+{
+  "generated_at": "2026-09-15T14:57:46.790287+00:00",
+  "source_file": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "chunksize_used": 500000,
+  "total_transactions": 6362620,
+  "total_fraud_transactions": 8213,
+  "overall_fraud_rate": 0.001290820448180152,
+  "counts_by_type": {
+    "CASH_IN": 1399284,
+    "CASH_OUT": 2237500,
+    "DEBIT": 41432,
+    "PAYMENT": 2151495,
+    "TRANSFER": 532909
+  },
+  "fraud_by_type": {
+    "CASH_IN": {
+      "count": 1399284,
+      "fraud_count": 0,
+      "fraud_rate": 0.0
+    },
+    "CASH_OUT": {
+      "count": 2237500,
+      "fraud_count": 4116,
+      "fraud_rate": 0.0018395530726256983
+    },
+    "DEBIT": {
+      "count": 41432,
+      "fraud_count": 0,
+      "fraud_rate": 0.0
+    },
+    "PAYMENT": {
+      "count": 2151495,
+      "fraud_count": 0,
+      "fraud_rate": 0.0
+    },
+    "TRANSFER": {
+      "count": 532909,
+      "fraud_count": 4097,
+      "fraud_rate": 0.007687991758442811
+    }
+  },
+  "fraud_by_day": {
+    "0": {
+      "total_count": 574255,
+      "fraud_count": 271,
+      "fraud_rate": 0.00047191578654082243
+    },
+    "1": {
+      "total_count": 455238,
+      "fraud_count": 309,
+      "fraud_rate": 0.0006787658323777892
+    },
+    "2": {
+      "total_count": 1070,
+      "fraud_count": 310,
+      "fraud_rate": 0.2897196261682243
+    },
+    "3": {
+      "total_count": 28240,
+      "fraud_count": 262,
+      "fraud_rate": 0.009277620396600567
+    },
+    "4": {
+      "total_count": 9789,
+      "fraud_count": 252,
+      "fraud_rate": 0.025743181121667177
+    },
+    "5": {
+      "total_count": 441005,
+      "fraud_count": 228,
+      "fraud_rate": 0.0005170009410324146
+    },
+    "6": {
+      "total_count": 420583,
+      "fraud_count": 272,
+      "fraud_rate": 0.0006467213368110456
+    },
+    "7": {
+      "total_count": 449637,
+      "fraud_count": 278,
+      "fraud_rate": 0.0006182765208379204
+    },
+    "8": {
+      "total_count": 417919,
+      "fraud_count": 255,
+      "fraud_rate": 0.0006101660848154786
+    },
+    "9": {
+      "total_count": 392945,
+      "fraud_count": 282,
+      "fraud_rate": 0.000717657687462622
+    },
+    "10": {
+      "total_count": 417859,
+      "fraud_count": 262,
+      "fraud_rate": 0.0006270057603162789
+    },
+    "11": {
+      "total_count": 349776,
+      "fraud_count": 298,
+      "fraud_rate": 0.0008519738346827684
+    },
+    "12": {
+      "total_count": 428583,
+      "fraud_count": 242,
+      "fraud_rate": 0.0005646514210782976
+    },
+    "13": {
+      "total_count": 397876,
+      "fraud_count": 246,
+      "fraud_rate": 0.0006182830831716414
+    },
+    "14": {
+      "total_count": 401282,
+      "fraud_count": 250,
+      "fraud_rate": 0.0006230032745052108
+    },
+    "15": {
+      "total_count": 375594,
+      "fraud_count": 252,
+      "fraud_rate": 0.0006709372354190961
+    },
+    "16": {
+      "total_count": 425766,
+      "fraud_count": 320,
+      "fraud_rate": 0.0007515865522376141
+    },
+    "17": {
+      "total_count": 20999,
+      "fraud_count": 268,
+      "fraud_rate": 0.012762512500595267
+    },
+    "18": {
+      "total_count": 11300,
+      "fraud_count": 256,
+      "fraud_rate": 0.02265486725663717
+    },
+    "19": {
+      "total_count": 19727,
+      "fraud_count": 236,
+      "fraud_rate": 0.01196329903178385
+    },
+    "20": {
+      "total_count": 24593,
+      "fraud_count": 272,
+      "fraud_rate": 0.01106005774000732
+    },
+    "21": {
+      "total_count": 53437,
+      "fraud_count": 256,
+      "fraud_rate": 0.0047906881000056144
+    },
+    "22": {
+      "total_count": 51012,
+      "fraud_count": 216,
+      "fraud_rate": 0.004234297812279464
+    },
+    "23": {
+      "total_count": 32709,
+      "fraud_count": 280,
+      "fraud_rate": 0.008560335075972973
+    },
+    "24": {
+      "total_count": 57853,
+      "fraud_count": 240,
+      "fraud_rate": 0.004148445197310425
+    },
+    "25": {
+      "total_count": 13885,
+      "fraud_count": 272,
+      "fraud_rate": 0.019589485055815627
+    },
+    "26": {
+      "total_count": 8578,
+      "fraud_count": 280,
+      "fraud_rate": 0.03264164140825367
+    },
+    "27": {
+      "total_count": 14661,
+      "fraud_count": 248,
+      "fraud_rate": 0.016915626492053748
+    },
+    "28": {
+      "total_count": 54890,
+      "fraud_count": 260,
+      "fraud_rate": 0.004736746219712151
+    },
+    "29": {
+      "total_count": 11287,
+      "fraud_count": 268,
+      "fraud_rate": 0.023744130415522282
+    },
+    "30": {
+      "total_count": 272,
+      "fraud_count": 272,
+      "fraud_rate": 1.0
+    }
+  },
+  "account_activity": {
+    "unique_origin_accounts": 6353307,
+    "unique_destination_accounts": 2722362,
+    "origin_accounts_with_multiple_transactions": 9298,
+    "destination_accounts_with_multiple_transactions": 459658,
+    "origin_transactions_per_account": {
+      "mean": 1.0014658507766112,
+      "median": 1.0,
+      "max": 3
+    },
+    "destination_transactions_per_account": {
+      "mean": 2.337168973119666,
+      "median": 1.0,
+      "max": 113
+    }
+  },
+  "zero_balance_patterns": {
+    "origin_both_zero_count": 2088985,
+    "origin_both_zero_fraud_count": 41,
+    "merchant_destination_rows": 2151495,
+    "merchant_destination_both_zero_count": 2151495,
+    "nonmerchant_destination_both_zero_count": 165787,
+    "nonmerchant_destination_both_zero_fraud_count": 4076
+  },
+  "flagged_vs_actual_fraud": {
+    "0_0": 6354407,
+    "0_1": 8197,
+    "1_0": 0,
+    "1_1": 16
+  },
+  "amount_balance_correlations": {
+    "amount_vs_oldbalanceOrg": -0.002762474758091869,
+    "amount_vs_newbalanceOrig": -0.007860925286479241,
+    "amount_vs_oldbalanceDest": 0.29413745001766894,
+    "amount_vs_newbalanceDest": 0.4593042672932801,
+    "oldbalanceOrg_vs_newbalanceOrig": 0.9988027631722911,
+    "oldbalanceDest_vs_newbalanceDest": 0.976568505447515
+  },
+  "amount_stats_overall": {
+    "count": 6362620,
+    "mean": 179861.90354913071,
+    "std": 603858.2314629357,
+    "min": 0.0,
+    "p50": 74871.94,
+    "p90": 365423.30900000007,
+    "p95": 518634.19649999996,
+    "p99": 1615979.4715999917,
+    "max": 92445516.64
+  },
+  "amount_stats_by_type": {
+    "CASH_IN": {
+      "count": 1399284,
+      "mean": 168920.2420040964,
+      "std": 126508.25527180845,
+      "min": 0.04,
+      "p50": 143427.71000000002,
+      "p90": 343358.13999999996,
+      "p95": 412005.1325,
+      "p99": 550870.8624999999,
+      "max": 1915267.9
+    },
+    "CASH_OUT": {
+      "count": 2237500,
+      "mean": 176273.96434614077,
+      "std": 175329.74448346382,
+      "min": 0.0,
+      "p50": 147072.185,
+      "p90": 355191.977,
+      "p95": 427877.16349999973,
+      "p99": 579654.0725999979,
+      "max": 10000000.0
+    },
+    "DEBIT": {
+      "count": 41432,
+      "mean": 5483.6653137671365,
+      "std": 13318.535518284696,
+      "min": 0.55,
+      "p50": 3048.99,
+      "p90": 9500.107000000002,
+      "p95": 14795.3545,
+      "p99": 50817.98380000013,
+      "max": 569077.51
+    },
+    "PAYMENT": {
+      "count": 2151495,
+      "mean": 13057.60466018745,
+      "std": 12556.450185716425,
+      "min": 0.02,
+      "p50": 9482.19,
+      "p90": 28810.734000000008,
+      "p95": 37835.658999999934,
+      "p99": 59500.10660000001,
+      "max": 238637.98
+    },
+    "TRANSFER": {
+      "count": 532909,
+      "mean": 910647.0096454928,
+      "std": 1879573.5289080313,
+      "min": 2.6,
+      "p50": 486308.39,
+      "p90": 1782296.6380000005,
+      "p95": 2674586.9399999934,
+      "p99": 10000000.0,
+      "max": 92445516.64
+    }
+  },
+  "amount_stats_by_fraud_label": {
+    "0": {
+      "count": 6354407,
+      "mean": 178197.0417274075,
+      "std": 596236.9813471773,
+      "min": 0.01,
+      "p50": 74684.72,
+      "p90": 364373.444,
+      "p95": 515610.4229999998,
+      "p99": 1586064.1733999916,
+      "max": 92445516.64
+    },
+    "1": {
+      "count": 8213,
+      "mean": 1467967.2991403872,
+      "std": 2404252.947240169,
+      "min": 0.0,
+      "p50": 441423.44,
+      "p90": 4521723.512000004,
+      "p95": 8006429.04,
+      "p99": 10000000.0,
+      "max": 10000000.0
+    }
+  },
+  "amount_stats_by_type_and_fraud": {
+    "CASH_IN": {
+      "0": {
+        "count": 1399284,
+        "mean": 168920.2420040964,
+        "std": 126508.25527180845,
+        "min": 0.04,
+        "p50": 143427.71000000002,
+        "p90": 343358.13999999996,
+        "p95": 412005.1325,
+        "p99": 550870.8624999999,
+        "max": 1915267.9
+      }
+    },
+    "CASH_OUT": {
+      "0": {
+        "count": 2233384,
+        "mean": 173917.1557513889,
+        "std": 131222.24097908926,
+        "min": 0.01,
+        "p50": 146946.56,
+        "p90": 354311.071,
+        "p95": 426154.6430000001,
+        "p99": 572665.0517999998,
+        "max": 2847566.62
+      },
+      "1": {
+        "count": 4116,
+        "mean": 1455102.5859645286,
+        "std": 2393841.785828416,
+        "min": 0.0,
+        "p50": 435516.905,
+        "p90": 4453316.6850000005,
+        "p95": 7841465.035,
+        "p99": 10000000.0,
+        "max": 10000000.0
+      }
+    },
+    "DEBIT": {
+      "0": {
+        "count": 41432,
+        "mean": 5483.6653137671365,
+        "std": 13318.535518284696,
+        "min": 0.55,
+        "p50": 3048.99,
+        "p90": 9500.107000000002,
+        "p95": 14795.3545,
+        "p99": 50817.98380000013,
+        "max": 569077.51
+      }
+    },
+    "PAYMENT": {
+      "0": {
+        "count": 2151495,
+        "mean": 13057.60466018745,
+        "std": 12556.450185716425,
+        "min": 0.02,
+        "p50": 9482.19,
+        "p90": 28810.734000000008,
+        "p95": 37835.658999999934,
+        "p99": 59500.10660000001,
+        "max": 238637.98
+      }
+    },
+    "TRANSFER": {
+      "0": {
+        "count": 528812,
+        "mean": 906229.0078121526,
+        "std": 1874155.2587669517,
+        "min": 2.6,
+        "p50": 486521.91000000003,
+        "p90": 1771407.8660000009,
+        "p95": 2646555.8044999936,
+        "p99": 10000000.0,
+        "max": 92445516.64
+      },
+      "1": {
+        "count": 4097,
+        "mean": 1480891.6729338542,
+        "std": 2414890.3787160846,
+        "min": 63.8,
+        "p50": 445705.76,
+        "p90": 4565651.636000001,
+        "p95": 8098658.151999999,
+        "p99": 10000000.0,
+        "max": 10000000.0
+      }
+    }
+  },
+  "classification_notes": {
+    "descriptive_observations": [
+      "Total transactions: 6,362,620; total fraud: 8,213 (0.129082%). Fraud is a severe minority class \u2014 raw counts are reported alongside every rate, and accuracy is not a meaningful metric on its own for this data.",
+      "Fraud rate varies sharply by transaction type (see fraud_by_type) \u2014 this is a descriptive pattern in the raw labels, observed directly from the data.",
+      "Account activity counts (unique origin/destination accounts, accounts with repeat transactions) are descriptive summaries of the raw account-id fields."
+    ],
+    "known_paysim_simulator_artifacts": [
+      "isFlaggedFraud triggers on only a tiny subset of actual fraud cases (see flagged_vs_actual_fraud) \u2014 PaySim's isFlaggedFraud is documented as a deliberately weak, simplistic control (a fixed amount threshold), not a competitive fraud signal.",
+      "Merchant destination accounts (nameDest starting with 'M') report oldbalanceDest = newbalanceDest = 0 for effectively all such rows \u2014 PaySim does not simulate merchant balances by design (confirmed in Milestone 3).",
+      "A large share of origin/destination balance pairs do not satisfy simple arithmetic consistency (newBalance = oldBalance +/- amount), including many rows where both balances are reported as exactly zero \u2014 this is a well-documented PaySim simulator characteristic (Milestone 3 balance_consistency check), not a data-quality defect introduced by this pipeline."
+    ],
+    "findings_requiring_modeling_to_verify": [
+      "Correlations between amount and balance fields (see amount_balance_correlations) are purely descriptive linear associations; whether these fields (or nonlinear combinations of them) are actually predictive of fraud requires a trained model to verify, not EDA alone.",
+      "Elevated fraud rates for TRANSFER/CASH_OUT versus other types are a strong candidate signal, but whether transaction type adds predictive value beyond amount/balance features (vs. being redundant with them) requires model evaluation.",
+      "Any time-based pattern in fraud_by_day is based on a small number of simulated days and should not be treated as a seasonality finding without further modeling/validation."
+    ]
+  }
+}

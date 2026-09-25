@@ -1,0 +1,11 @@
+scenario,synthetic_stress_label,type,n_total,n_alerts,tp,fp,fn,tn,precision,recall,average_precision_pr_auc,roc_auc_secondary
+original_test_period,n/a (real isFraud),CASH_OUT,26377,525,524,1,0,25852,0.9980952380952381,1.0,1.0,1.0
+original_test_period,n/a (real isFraud),TRANSFER,7993,524,524,0,0,7469,1.0,1.0,1.0,1.0
+A_behavioral_without_balance_signature,1,CASH_OUT,1500,0,0,0,1500,0,,0.0,,
+A_behavioral_without_balance_signature,1,TRANSFER,1500,0,0,0,1500,0,,0.0,,
+B_behavioral_with_normal_after_zero,1,CASH_OUT,1500,173,173,0,1327,0,1.0,0.11533333333333333,,
+B_behavioral_with_normal_after_zero,1,TRANSFER,1500,48,48,0,1452,0,1.0,0.032,,
+C_altered_balance_pattern,1,CASH_OUT,1500,0,0,0,1500,0,,0.0,,
+C_altered_balance_pattern,1,TRANSFER,1500,0,0,0,1500,0,,0.0,,
+D_non_fraud_distractor,0,CASH_OUT,1500,0,0,0,0,1500,,,,
+D_non_fraud_distractor,0,TRANSFER,1500,0,0,0,0,1500,,,,

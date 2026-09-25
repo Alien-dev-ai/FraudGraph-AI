@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Raw and processed datasets (PaySim is ~470 MB+ and must be downloaded separately)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Milestone 8 full-stream audit (~231 MB, exceeds GitHub's 100 MB file limit;
+# regenerate with: python -m src.baseline_dataset --full-stream)
+reports/baseline_full_stream_audit.json
+
+# OS / editor files
+.DS_Store
+.idea/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat
+node_modules

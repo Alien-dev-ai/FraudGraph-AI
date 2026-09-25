@@ -1,0 +1,876 @@
+{
+  "runtime_seconds": 30.32,
+  "target_column_used_for": "label audit only, never as a feature",
+  "step_verification": {
+    "total_rows": 6362620,
+    "is_non_decreasing_by_step": true,
+    "min_step": 1,
+    "max_step": 743,
+    "unique_step_count": 743,
+    "rows_sharing_step_with_prior_row": 6361877,
+    "rows_sharing_step_with_prior_row_pct": 0.9998832242063804
+  },
+  "per_day_stats": {
+    "0": {
+      "total_count": 574255,
+      "fraud_count": 271,
+      "type_counts": {
+        "PAYMENT": 194676,
+        "CASH_OUT": 204397,
+        "CASH_IN": 124026,
+        "TRANSFER": 46686,
+        "DEBIT": 4470
+      },
+      "min_step": 1,
+      "max_step": 24,
+      "fraud_rate": 0.00047191578654082243
+    },
+    "1": {
+      "total_count": 455238,
+      "fraud_count": 309,
+      "type_counts": {
+        "PAYMENT": 150147,
+        "CASH_OUT": 164605,
+        "CASH_IN": 99707,
+        "TRANSFER": 38269,
+        "DEBIT": 2510
+      },
+      "min_step": 25,
+      "max_step": 48,
+      "fraud_rate": 0.0006787658323777892
+    },
+    "2": {
+      "total_count": 1070,
+      "fraud_count": 310,
+      "type_counts": {
+        "PAYMENT": 480,
+        "CASH_OUT": 240,
+        "TRANSFER": 189,
+        "CASH_IN": 137,
+        "DEBIT": 24
+      },
+      "min_step": 49,
+      "max_step": 72,
+      "fraud_rate": 0.2897196261682243
+    },
+    "3": {
+      "total_count": 28240,
+      "fraud_count": 262,
+      "type_counts": {
+        "PAYMENT": 14286,
+        "CASH_OUT": 6252,
+        "CASH_IN": 4848,
+        "TRANSFER": 2514,
+        "DEBIT": 340
+      },
+      "min_step": 73,
+      "max_step": 96,
+      "fraud_rate": 0.009277620396600567
+    },
+    "4": {
+      "total_count": 9789,
+      "fraud_count": 252,
+      "type_counts": {
+        "PAYMENT": 5470,
+        "CASH_OUT": 1769,
+        "CASH_IN": 1450,
+        "TRANSFER": 906,
+        "DEBIT": 194
+      },
+      "min_step": 97,
+      "max_step": 120,
+      "fraud_rate": 0.025743181121667177
+    },
+    "5": {
+      "total_count": 441005,
+      "fraud_count": 228,
+      "type_counts": {
+        "CASH_OUT": 159596,
+        "PAYMENT": 142460,
+        "CASH_IN": 99972,
+        "TRANSFER": 36314,
+        "DEBIT": 2663
+      },
+      "min_step": 121,
+      "max_step": 144,
+      "fraud_rate": 0.0005170009410324146
+    },
+    "6": {
+      "total_count": 420583,
+      "fraud_count": 272,
+      "type_counts": {
+        "CASH_OUT": 151338,
+        "PAYMENT": 138250,
+        "CASH_IN": 93735,
+        "TRANSFER": 34721,
+        "DEBIT": 2539
+      },
+      "min_step": 145,
+      "max_step": 168,
+      "fraud_rate": 0.0006467213368110456
+    },
+    "7": {
+      "total_count": 449637,
+      "fraud_count": 278,
+      "type_counts": {
+        "CASH_OUT": 159368,
+        "PAYMENT": 149776,
+        "CASH_IN": 99924,
+        "TRANSFER": 37674,
+        "DEBIT": 2895
+      },
+      "min_step": 169,
+      "max_step": 192,
+      "fraud_rate": 0.0006182765208379204
+    },
+    "8": {
+      "total_count": 417919,
+      "fraud_count": 255,
+      "type_counts": {
+        "PAYMENT": 144781,
+        "CASH_OUT": 147654,
+        "CASH_IN": 89361,
+        "TRANSFER": 33995,
+        "DEBIT": 2128
+      },
+      "min_step": 193,
+      "max_step": 216,
+      "fraud_rate": 0.0006101660848154786
+    },
+    "9": {
+      "total_count": 392945,
+      "fraud_count": 282,
+      "type_counts": {
+        "PAYMENT": 132895,
+        "CASH_IN": 85807,
+        "CASH_OUT": 139113,
+        "TRANSFER": 32717,
+        "DEBIT": 2413
+      },
+      "min_step": 217,
+      "max_step": 240,
+      "fraud_rate": 0.000717657687462622
+    },
+    "10": {
+      "total_count": 417859,
+      "fraud_count": 262,
+      "type_counts": {
+        "PAYMENT": 142592,
+        "CASH_OUT": 148021,
+        "CASH_IN": 91109,
+        "TRANSFER": 34088,
+        "DEBIT": 2049
+      },
+      "min_step": 241,
+      "max_step": 264,
+      "fraud_rate": 0.0006270057603162789
+    },
+    "11": {
+      "total_count": 349776,
+      "fraud_count": 298,
+      "type_counts": {
+        "CASH_OUT": 121504,
+        "PAYMENT": 123788,
+        "CASH_IN": 74454,
+        "TRANSFER": 27836,
+        "DEBIT": 2194
+      },
+      "min_step": 265,
+      "max_step": 288,
+      "fraud_rate": 0.0008519738346827684
+    },
+    "12": {
+      "total_count": 428583,
+      "fraud_count": 242,
+      "type_counts": {
+        "CASH_OUT": 151884,
+        "PAYMENT": 141460,
+        "CASH_IN": 95840,
+        "TRANSFER": 36773,
+        "DEBIT": 2626
+      },
+      "min_step": 289,
+      "max_step": 312,
+      "fraud_rate": 0.0005646514210782976
+    },
+    "13": {
+      "total_count": 397876,
+      "fraud_count": 246,
+      "type_counts": {
+        "PAYMENT": 135173,
+        "CASH_OUT": 138626,
+        "CASH_IN": 87298,
+        "TRANSFER": 33898,
+        "DEBIT": 2881
+      },
+      "min_step": 313,
+      "max_step": 336,
+      "fraud_rate": 0.0006182830831716414
+    },
+    "14": {
+      "total_count": 401282,
+      "fraud_count": 250,
+      "type_counts": {
+        "PAYMENT": 134424,
+        "CASH_OUT": 140175,
+        "CASH_IN": 89636,
+        "TRANSFER": 33776,
+        "DEBIT": 3271
+      },
+      "min_step": 337,
+      "max_step": 360,
+      "fraud_rate": 0.0006230032745052108
+    },
+    "15": {
+      "total_count": 375594,
+      "fraud_count": 252,
+      "type_counts": {
+        "PAYMENT": 127445,
+        "CASH_OUT": 131588,
+        "CASH_IN": 82591,
+        "TRANSFER": 31556,
+        "DEBIT": 2414
+      },
+      "min_step": 361,
+      "max_step": 384,
+      "fraud_rate": 0.0006709372354190961
+    },
+    "16": {
+      "total_count": 425766,
+      "fraud_count": 320,
+      "type_counts": {
+        "CASH_OUT": 152162,
+        "PAYMENT": 141614,
+        "CASH_IN": 93494,
+        "TRANSFER": 35618,
+        "DEBIT": 2878
+      },
+      "min_step": 385,
+      "max_step": 408,
+      "fraud_rate": 0.0007515865522376141
+    },
+    "17": {
+      "total_count": 20999,
+      "fraud_count": 268,
+      "type_counts": {
+        "PAYMENT": 7680,
+        "CASH_OUT": 6201,
+        "CASH_IN": 5065,
+        "TRANSFER": 1867,
+        "DEBIT": 186
+      },
+      "min_step": 409,
+      "max_step": 432,
+      "fraud_rate": 0.012762512500595267
+    },
+    "18": {
+      "total_count": 11300,
+      "fraud_count": 256,
+      "type_counts": {
+        "PAYMENT": 4302,
+        "CASH_OUT": 3230,
+        "CASH_IN": 2709,
+        "TRANSFER": 993,
+        "DEBIT": 66
+      },
+      "min_step": 433,
+      "max_step": 456,
+      "fraud_rate": 0.02265486725663717
+    },
+    "19": {
+      "total_count": 19727,
+      "fraud_count": 236,
+      "type_counts": {
+        "PAYMENT": 7081,
+        "CASH_OUT": 6191,
+        "CASH_IN": 4366,
+        "TRANSFER": 1951,
+        "DEBIT": 138
+      },
+      "min_step": 457,
+      "max_step": 480,
+      "fraud_rate": 0.01196329903178385
+    },
+    "20": {
+      "total_count": 24593,
+      "fraud_count": 272,
+      "type_counts": {
+        "PAYMENT": 8739,
+        "CASH_OUT": 7567,
+        "CASH_IN": 5634,
+        "TRANSFER": 2541,
+        "DEBIT": 112
+      },
+      "min_step": 481,
+      "max_step": 504,
+      "fraud_rate": 0.01106005774000732
+    },
+    "21": {
+      "total_count": 53437,
+      "fraud_count": 256,
+      "type_counts": {
+        "PAYMENT": 19381,
+        "CASH_OUT": 16732,
+        "CASH_IN": 12005,
+        "TRANSFER": 4797,
+        "DEBIT": 522
+      },
+      "min_step": 505,
+      "max_step": 528,
+      "fraud_rate": 0.0047906881000056144
+    },
+    "22": {
+      "total_count": 51012,
+      "fraud_count": 216,
+      "type_counts": {
+        "PAYMENT": 18261,
+        "CASH_OUT": 16132,
+        "CASH_IN": 11552,
+        "TRANSFER": 4658,
+        "DEBIT": 409
+      },
+      "min_step": 529,
+      "max_step": 552,
+      "fraud_rate": 0.004234297812279464
+    },
+    "23": {
+      "total_count": 32709,
+      "fraud_count": 280,
+      "type_counts": {
+        "PAYMENT": 11322,
+        "CASH_OUT": 10676,
+        "CASH_IN": 7417,
+        "TRANSFER": 3098,
+        "DEBIT": 196
+      },
+      "min_step": 553,
+      "max_step": 576,
+      "fraud_rate": 0.008560335075972973
+    },
+    "24": {
+      "total_count": 57853,
+      "fraud_count": 240,
+      "type_counts": {
+        "PAYMENT": 19871,
+        "CASH_OUT": 19054,
+        "CASH_IN": 13088,
+        "TRANSFER": 5349,
+        "DEBIT": 491
+      },
+      "min_step": 577,
+      "max_step": 600,
+      "fraud_rate": 0.004148445197310425
+    },
+    "25": {
+      "total_count": 13885,
+      "fraud_count": 272,
+      "type_counts": {
+        "PAYMENT": 5028,
+        "CASH_OUT": 4214,
+        "CASH_IN": 3289,
+        "TRANSFER": 1244,
+        "DEBIT": 110
+      },
+      "min_step": 601,
+      "max_step": 624,
+      "fraud_rate": 0.019589485055815627
+    },
+    "26": {
+      "total_count": 8578,
+      "fraud_count": 280,
+      "type_counts": {
+        "CASH_OUT": 2834,
+        "PAYMENT": 2733,
+        "CASH_IN": 2093,
+        "TRANSFER": 888,
+        "DEBIT": 30
+      },
+      "min_step": 625,
+      "max_step": 648,
+      "fraud_rate": 0.03264164140825367
+    },
+    "27": {
+      "total_count": 14661,
+      "fraud_count": 248,
+      "type_counts": {
+        "PAYMENT": 5265,
+        "CASH_OUT": 4229,
+        "CASH_IN": 3576,
+        "TRANSFER": 1495,
+        "DEBIT": 96
+      },
+      "min_step": 649,
+      "max_step": 672,
+      "fraud_rate": 0.016915626492053748
+    },
+    "28": {
+      "total_count": 54890,
+      "fraud_count": 260,
+      "type_counts": {
+        "PAYMENT": 18433,
+        "CASH_OUT": 17965,
+        "CASH_IN": 12682,
+        "TRANSFER": 5348,
+        "DEBIT": 462
+      },
+      "min_step": 673,
+      "max_step": 696,
+      "fraud_rate": 0.004736746219712151
+    },
+    "29": {
+      "total_count": 11287,
+      "fraud_count": 268,
+      "type_counts": {
+        "CASH_OUT": 4047,
+        "PAYMENT": 3682,
+        "CASH_IN": 2419,
+        "TRANSFER": 1014,
+        "DEBIT": 125
+      },
+      "min_step": 697,
+      "max_step": 720,
+      "fraud_rate": 0.023744130415522282
+    },
+    "30": {
+      "total_count": 272,
+      "fraud_count": 272,
+      "type_counts": {
+        "TRANSFER": 136,
+        "CASH_OUT": 136
+      },
+      "min_step": 721,
+      "max_step": 743,
+      "fraud_rate": 1.0
+    }
+  },
+  "policy_evaluations": {
+    "chronological_holdout_80_20": {
+      "policy": "chronological_holdout_80_20",
+      "regions": {
+        "train": {
+          "day_range": [
+            0,
+            23
+          ],
+          "days_covered": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "total_rows": 6201194,
+          "fraud_rows": 6373,
+          "fraud_rate": 0.0010277053096548825,
+          "type_counts": {
+            "PAYMENT": 2096483,
+            "CASH_OUT": 2185021,
+            "CASH_IN": 1362137,
+            "TRANSFER": 517435,
+            "DEBIT": 40118
+          },
+          "step_range": [
+            1,
+            576
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": false
+        },
+        "test": {
+          "day_range": [
+            24,
+            30
+          ],
+          "days_covered": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "total_rows": 161426,
+          "fraud_rows": 1840,
+          "fraud_rate": 0.011398411656114877,
+          "type_counts": {
+            "PAYMENT": 55012,
+            "CASH_OUT": 52479,
+            "CASH_IN": 37147,
+            "TRANSFER": 15474,
+            "DEBIT": 1314
+          },
+          "step_range": [
+            577,
+            743
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": false
+        }
+      }
+    },
+    "chronological_train_val_test": {
+      "policy": "chronological_train_val_test",
+      "regions": {
+        "train": {
+          "day_range": [
+            0,
+            23
+          ],
+          "days_covered": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "total_rows": 6201194,
+          "fraud_rows": 6373,
+          "fraud_rate": 0.0010277053096548825,
+          "type_counts": {
+            "PAYMENT": 2096483,
+            "CASH_OUT": 2185021,
+            "CASH_IN": 1362137,
+            "TRANSFER": 517435,
+            "DEBIT": 40118
+          },
+          "step_range": [
+            1,
+            576
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": false
+        },
+        "validation": {
+          "day_range": [
+            24,
+            26
+          ],
+          "days_covered": [
+            24,
+            25,
+            26
+          ],
+          "total_rows": 80316,
+          "fraud_rows": 792,
+          "fraud_rate": 0.009861048857014791,
+          "type_counts": {
+            "PAYMENT": 27632,
+            "CASH_OUT": 26102,
+            "CASH_IN": 18470,
+            "TRANSFER": 7481,
+            "DEBIT": 631
+          },
+          "step_range": [
+            577,
+            648
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": false
+        },
+        "test": {
+          "day_range": [
+            27,
+            30
+          ],
+          "days_covered": [
+            27,
+            28,
+            29,
+            30
+          ],
+          "total_rows": 81110,
+          "fraud_rows": 1048,
+          "fraud_rate": 0.012920724941437554,
+          "type_counts": {
+            "PAYMENT": 27380,
+            "CASH_OUT": 26377,
+            "CASH_IN": 18677,
+            "TRANSFER": 7993,
+            "DEBIT": 683
+          },
+          "step_range": [
+            649,
+            743
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": false
+        }
+      }
+    },
+    "naive_tail_only_test": {
+      "policy": "naive_tail_only_test",
+      "regions": {
+        "train": {
+          "day_range": [
+            0,
+            29
+          ],
+          "days_covered": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "total_rows": 6362348,
+          "fraud_rows": 7941,
+          "fraud_rate": 0.0012481241202147383,
+          "type_counts": {
+            "PAYMENT": 2151495,
+            "CASH_OUT": 2237364,
+            "CASH_IN": 1399284,
+            "TRANSFER": 532773,
+            "DEBIT": 41432
+          },
+          "step_range": [
+            1,
+            720
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": false
+        },
+        "test": {
+          "day_range": [
+            30,
+            30
+          ],
+          "days_covered": [
+            30
+          ],
+          "total_rows": 272,
+          "fraud_rows": 272,
+          "fraud_rate": 1.0,
+          "type_counts": {
+            "TRANSFER": 136,
+            "CASH_OUT": 136
+          },
+          "step_range": [
+            721,
+            743
+          ],
+          "has_zero_fraud": false,
+          "is_fraud_only": true
+        }
+      }
+    },
+    "random_stratified_diagnostic": {
+      "policy": "random_stratified_diagnostic",
+      "regions": {},
+      "note": "not a temporal region-based policy"
+    }
+  },
+  "overlap_checks": {
+    "chronological_holdout_80_20": {
+      "policy": "chronological_holdout_80_20",
+      "applicable": true,
+      "no_overlap": true,
+      "overlap_days": [],
+      "days_covered_by_policy": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "days_in_dataset_not_covered": [],
+      "rows_covered_by_policy": 6362620,
+      "rows_in_dataset": 6362620,
+      "rows_accounted_pct": 1.0
+    },
+    "chronological_train_val_test": {
+      "policy": "chronological_train_val_test",
+      "applicable": true,
+      "no_overlap": true,
+      "overlap_days": [],
+      "days_covered_by_policy": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "days_in_dataset_not_covered": [],
+      "rows_covered_by_policy": 6362620,
+      "rows_in_dataset": 6362620,
+      "rows_accounted_pct": 1.0
+    },
+    "naive_tail_only_test": {
+      "policy": "naive_tail_only_test",
+      "applicable": true,
+      "no_overlap": true,
+      "overlap_days": [],
+      "days_covered_by_policy": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "days_in_dataset_not_covered": [],
+      "rows_covered_by_policy": 6362620,
+      "rows_in_dataset": 6362620,
+      "rows_accounted_pct": 1.0
+    },
+    "random_stratified_diagnostic": {
+      "policy": "random_stratified_diagnostic",
+      "applicable": false
+    }
+  },
+  "group_split_feasibility": {
+    "total_rows": 6362620,
+    "unique_origin_accounts": 6353307,
+    "unique_destination_accounts": 2722362,
+    "origin_accounts_with_multiple_transactions": 9298,
+    "origin_repeat_rate": 0.0014634898014530072,
+    "destination_accounts_with_multiple_transactions": 459658,
+    "destination_repeat_rate": 0.16884528949493124
+  },
+  "baseline_feature_columns_count": 39,
+  "identifier_columns": [
+    "row_id",
+    "nameOrig",
+    "nameDest"
+  ]
+}

@@ -1,0 +1,21 @@
+scenario,synthetic_stress_label,day_index,is_simulation_boundary_day,n_total,n_alerts,tp,fp,fn,tn,precision,recall,average_precision_pr_auc,roc_auc_secondary
+original_test_period,n/a (real isFraud),27,False,14661,248,248,0,0,14413,1.0,1.0,1.0,0.9999999999999999
+original_test_period,n/a (real isFraud),28,False,54890,261,260,1,0,54629,0.9961685823754789,1.0,1.0,1.0
+original_test_period,n/a (real isFraud),29,False,11287,268,268,0,0,11019,1.0,1.0,1.0,1.0
+original_test_period,n/a (real isFraud),30,True,272,272,272,0,0,0,1.0,1.0,,
+A_behavioral_without_balance_signature,1,27,False,1000,0,0,0,1000,0,,0.0,,
+A_behavioral_without_balance_signature,1,28,False,1000,0,0,0,1000,0,,0.0,,
+A_behavioral_without_balance_signature,1,29,False,1000,0,0,0,1000,0,,0.0,,
+A_behavioral_without_balance_signature,1,30,True,0,0,0,0,0,0,,,,
+B_behavioral_with_normal_after_zero,1,27,False,1000,64,64,0,936,0,1.0,0.064,,
+B_behavioral_with_normal_after_zero,1,28,False,1000,68,68,0,932,0,1.0,0.068,,
+B_behavioral_with_normal_after_zero,1,29,False,1000,89,89,0,911,0,1.0,0.089,,
+B_behavioral_with_normal_after_zero,1,30,True,0,0,0,0,0,0,,,,
+C_altered_balance_pattern,1,27,False,1000,0,0,0,1000,0,,0.0,,
+C_altered_balance_pattern,1,28,False,1000,0,0,0,1000,0,,0.0,,
+C_altered_balance_pattern,1,29,False,1000,0,0,0,1000,0,,0.0,,
+C_altered_balance_pattern,1,30,True,0,0,0,0,0,0,,,,
+D_non_fraud_distractor,0,27,False,1000,0,0,0,0,1000,,,,
+D_non_fraud_distractor,0,28,False,1000,0,0,0,0,1000,,,,
+D_non_fraud_distractor,0,29,False,1000,0,0,0,0,1000,,,,
+D_non_fraud_distractor,0,30,True,0,0,0,0,0,0,,,,

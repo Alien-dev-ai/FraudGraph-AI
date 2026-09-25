@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-15T16:26:26.989559+00:00",
+  "source_file": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "sample_row_count": 20000,
+  "runtime_seconds": 45.53,
+  "subset_validation": {
+    "total_rows": 2000000,
+    "isFraud_used": false,
+    "origin_out_degree": {
+      "mean": 0.000461,
+      "max": 2
+    },
+    "dest_in_degree": {
+      "mean": 4.847656,
+      "max": 100
+    },
+    "pair_seen_before_rate": 0.0,
+    "origin_dual_role_rate": 5.05e-05,
+    "dest_dual_role_rate": 0.0002805,
+    "origin_concentration_mean_when_defined": 0.999457111834962,
+    "origin_concentration_defined_count": 921,
+    "dest_concentration_mean_when_defined": 0.29446997290239524,
+    "dest_concentration_defined_count": 1149411,
+    "cross_check_final_unique_origin_accounts": 1999079,
+    "cross_check_final_unique_directed_pairs": 2000000,
+    "cross_check_final_repeated_pair_count": 0
+  },
+  "two_hop_exploration_on_m6_graph": {
+    "candidate_node_count": 1999079,
+    "sampled_node_count": 5000,
+    "two_hop_neighbor_count_mean": 0.0004,
+    "two_hop_neighbor_count_max": 1,
+    "two_hop_neighbor_count_median": 0.0,
+    "fraction_with_zero_two_hop_neighbors": 0.9996
+  },
+  "isFraud_used": false
+}

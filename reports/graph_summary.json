@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-15T15:41:17.292719+00:00",
+  "source_file": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "rows_processed": 2000000,
+  "is_full_dataset": false,
+  "full_dataset_row_count": 6362620,
+  "runtime_seconds": 70.53,
+  "graph_statistics": {
+    "node_count": 2849485,
+    "edge_count": 2000000,
+    "unique_origin_accounts": 1999079,
+    "unique_destination_accounts": 850589,
+    "accounts_on_both_sides": 183,
+    "isolated_node_count": 0,
+    "self_loop_count": 0,
+    "repeated_pair_count": 0,
+    "unique_directed_pair_count": 2000000,
+    "density": 2.4631870792473956e-07,
+    "in_degree_summary": {
+      "min": 0,
+      "max": 101,
+      "mean": 0.7018812171322186,
+      "median": 0.0
+    },
+    "out_degree_summary": {
+      "min": 0,
+      "max": 3,
+      "mean": 0.7018812171322186,
+      "median": 1.0
+    },
+    "strongly_connected_components": {
+      "count": 2849485,
+      "largest_size": 1,
+      "size_1_count": 2849485,
+      "size_gt_1_count": 0
+    },
+    "weakly_connected_components": {
+      "count": 849485,
+      "largest_size": 102,
+      "size_1_count": 0,
+      "size_gt_1_count": 849485
+    },
+    "merchant_node_count": 668858,
+    "customer_node_count": 2180627
+  },
+  "validation": {
+    "rows_validated": 2000000,
+    "baseline": {
+      "total_rows": 2000000,
+      "unique_origin_accounts": 1999079,
+      "unique_destination_accounts": 850589,
+      "unique_directed_pairs": 2000000,
+      "self_loop_count": 0
+    },
+    "graph_derived": {
+      "unique_origin_accounts": 1999079,
+      "unique_destination_accounts": 850589,
+      "unique_directed_pairs": 2000000,
+      "self_loop_count": 0,
+      "sum_edge_transaction_count": 2000000
+    },
+    "checks": {
+      "row_count_matches": true,
+      "unique_origin_matches": true,
+      "unique_destination_matches": true,
+      "unique_pair_count_matches": true,
+      "self_loop_count_matches": true,
+      "transaction_count_sum_matches_row_count": true
+    },
+    "all_checks_passed": true
+  },
+  "isFraud_used": false
+}

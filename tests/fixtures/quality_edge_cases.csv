@@ -1,0 +1,7 @@
+step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFraud,isFlaggedFraud
+1,PAYMENT,100.0,C1,1000.0,900.0,M1,0.0,0.0,0,0
+1,PAYMENT,100.0,C1,1000.0,900.0,M1,0.0,0.0,0,0
+2,UNKNOWN_TYPE,50.0,C2,500.0,450.0,C3,100.0,150.0,0,0
+3,CASH_OUT,-20.0,C4,300.0,320.0,C5,50.0,30.0,0,0
+4,TRANSFER,40.0,C6,200.0,160.0,C7,10.0,50.0,2,0
+5,TRANSFER,60.0,M8,600.0,540.0,X9,20.0,80.0,0,0

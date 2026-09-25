@@ -1,0 +1,37 @@
+FraudGraph AI — Raw PaySim EDA Summary (Milestone 4)
+Generated: 2026-09-15T14:57:46.790287+00:00
+Source: /Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv
+
+Total transactions: 6,362,620 | Total fraud: 8,213 | Overall fraud rate: 0.129082%
+
+NOTE: No image plots (matplotlib/seaborn) were generated — no plotting library is installed in this project's venv, and installing new packages is out of scope for this milestone. ASCII bar charts are provided below as a lightweight substitute.
+
+Transaction counts by type:
+  CASH_OUT    2,237,500  ########################################
+  PAYMENT     2,151,495  ######################################
+  CASH_IN     1,399,284  #########################
+  TRANSFER      532,909  ##########
+  DEBIT          41,432  #
+
+Fraud rate by type:
+  TRANSFER      0.7688%  (4,097/532,909)  ########################################
+  CASH_OUT      0.1840%  (4,116/2,237,500)  ##########
+  CASH_IN       0.0000%  (0/1,399,284)  
+  DEBIT         0.0000%  (0/41,432)  
+  PAYMENT       0.0000%  (0/2,151,495)  
+
+--- Descriptive observations ---
+  - Total transactions: 6,362,620; total fraud: 8,213 (0.129082%). Fraud is a severe minority class — raw counts are reported alongside every rate, and accuracy is not a meaningful metric on its own for this data.
+  - Fraud rate varies sharply by transaction type (see fraud_by_type) — this is a descriptive pattern in the raw labels, observed directly from the data.
+  - Account activity counts (unique origin/destination accounts, accounts with repeat transactions) are descriptive summaries of the raw account-id fields.
+
+--- Known PaySim simulator artifacts (not data defects) ---
+  - isFlaggedFraud triggers on only a tiny subset of actual fraud cases (see flagged_vs_actual_fraud) — PaySim's isFlaggedFraud is documented as a deliberately weak, simplistic control (a fixed amount threshold), not a competitive fraud signal.
+  - Merchant destination accounts (nameDest starting with 'M') report oldbalanceDest = newbalanceDest = 0 for effectively all such rows — PaySim does not simulate merchant balances by design (confirmed in Milestone 3).
+  - A large share of origin/destination balance pairs do not satisfy simple arithmetic consistency (newBalance = oldBalance +/- amount), including many rows where both balances are reported as exactly zero — this is a well-documented PaySim simulator characteristic (Milestone 3 balance_consistency check), not a data-quality defect introduced by this pipeline.
+
+--- Findings requiring later modeling to verify ---
+  - Correlations between amount and balance fields (see amount_balance_correlations) are purely descriptive linear associations; whether these fields (or nonlinear combinations of them) are actually predictive of fraud requires a trained model to verify, not EDA alone.
+  - Elevated fraud rates for TRANSFER/CASH_OUT versus other types are a strong candidate signal, but whether transaction type adds predictive value beyond amount/balance features (vs. being redundant with them) requires model evaluation.
+  - Any time-based pattern in fraud_by_day is based on a small number of simulated days and should not be treated as a seasonality finding without further modeling/validation.
+

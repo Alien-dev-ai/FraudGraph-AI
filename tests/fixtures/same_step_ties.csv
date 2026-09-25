@@ -1,0 +1,5 @@
+step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFraud,isFlaggedFraud
+5,PAYMENT,100,C1,500,400,M1,0,0,0,0
+5,PAYMENT,50,C1,400,350,M2,0,0,0,0
+5,CASH_OUT,200,C2,300,100,M1,50,250,0,0
+6,PAYMENT,10,C4,100,90,M3,0,0,0,0

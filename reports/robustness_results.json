@@ -1,0 +1,908 @@
+{
+  "smoke_test": {
+    "max_rows": 300000,
+    "chunksize": 200000,
+    "stream_stats": {
+      "rows_seen": 300000,
+      "rows_by_split": {
+        "train": 300000,
+        "validation": 0,
+        "test": 0
+      },
+      "fraud_by_split": {
+        "train": 181,
+        "validation": 0,
+        "test": 0
+      },
+      "rows_outside_policy": 0
+    },
+    "test_metadata_rows": 0,
+    "test_split_rows": 0,
+    "row_counts_aligned": true,
+    "groups_exercised": {
+      "FULL_BASELINE": {
+        "trained": true,
+        "n_features": 39
+      },
+      "BALANCE_REDUCED_FULL": {
+        "trained": true,
+        "n_features": 37
+      }
+    },
+    "runtime_seconds": 9.32,
+    "rss_before_mb": 136.1,
+    "peak_rss_mb": 628.9,
+    "safety_limit_mb": 8000,
+    "within_safety_limit": true
+  },
+  "csv_path": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "chunksize": 200000,
+  "max_rows": null,
+  "runtime_seconds": 214.35,
+  "peak_rss_mb": 7879.0,
+  "threshold": 0.5,
+  "split_policy_name": "chronological_train_val_test",
+  "split_day_ranges": {
+    "train": [
+      0,
+      23
+    ],
+    "validation": [
+      24,
+      26
+    ],
+    "test": [
+      27,
+      30
+    ]
+  },
+  "test_day_range": [
+    27,
+    30
+  ],
+  "simulation_boundary_day": 30,
+  "fraud_eligible_types": [
+    "CASH_OUT",
+    "TRANSFER"
+  ],
+  "fraud_type_verification": {
+    "fraud_by_type": {
+      "CASH_OUT": 4116,
+      "TRANSFER": 4097
+    },
+    "total_by_type": {
+      "PAYMENT": 2151495,
+      "CASH_OUT": 2237500,
+      "CASH_IN": 1399284,
+      "TRANSFER": 532909,
+      "DEBIT": 41432
+    },
+    "fraud_confined_to_eligible_types": true,
+    "unexpected_fraud_types": {}
+  },
+  "stream_stats": {
+    "rows_seen": 6362620,
+    "rows_by_split": {
+      "train": 6201194,
+      "validation": 80316,
+      "test": 81110
+    },
+    "fraud_by_split": {
+      "train": 6373,
+      "validation": 792,
+      "test": 1048
+    },
+    "rows_outside_policy": 0
+  },
+  "groups": {
+    "FULL_BASELINE": {
+      "feature_count": 39,
+      "train_rows": 6201194,
+      "train_fraud": 6373,
+      "test_rows": 81110,
+      "test_fraud": 1048,
+      "whole_test_period": {
+        "n_total": 81110,
+        "n_fraud": 1048,
+        "n_legitimate": 80062,
+        "fraud_prevalence": 0.012920724941437554,
+        "threshold": 0.5,
+        "n_alerts": 1049,
+        "confusion_matrix": {
+          "tn": 80061,
+          "fp": 1,
+          "fn": 0,
+          "tp": 1048
+        },
+        "precision": 0.9990467111534795,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "false_positive_count": 1,
+        "false_positive_rate": 1.2490320001998452e-05,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "alert_budget_rate": 0.01,
+        "alert_budget_count": 811,
+        "precision_at_alert_budget": 1.0,
+        "recall_at_alert_budget": 0.773854961832061
+      },
+      "whole_validation": {
+        "n_total": 80316,
+        "n_fraud": 792,
+        "n_legitimate": 79524,
+        "fraud_prevalence": 0.009861048857014791,
+        "threshold": 0.5,
+        "n_alerts": 794,
+        "confusion_matrix": {
+          "tn": 79522,
+          "fp": 2,
+          "fn": 0,
+          "tp": 792
+        },
+        "precision": 0.9974811083123426,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "false_positive_count": 2,
+        "false_positive_rate": 2.514964036014285e-05,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "alert_budget_rate": 0.01,
+        "alert_budget_count": 803,
+        "precision_at_alert_budget": 0.9863013698630136,
+        "recall_at_alert_budget": 1.0
+      }
+    },
+    "BALANCE_REDUCED_FULL": {
+      "feature_count": 37,
+      "train_rows": 6201194,
+      "train_fraud": 6373,
+      "test_rows": 81110,
+      "test_fraud": 1048,
+      "whole_test_period": {
+        "n_total": 81110,
+        "n_fraud": 1048,
+        "n_legitimate": 80062,
+        "fraud_prevalence": 0.012920724941437554,
+        "threshold": 0.5,
+        "n_alerts": 4908,
+        "confusion_matrix": {
+          "tn": 76186,
+          "fp": 3876,
+          "fn": 16,
+          "tp": 1032
+        },
+        "precision": 0.21026894865525672,
+        "recall": 0.9847328244274809,
+        "fraud_capture_rate": 0.9847328244274809,
+        "false_positive_count": 3876,
+        "false_positive_rate": 0.048412480327746,
+        "average_precision_pr_auc": 0.8889201633936458,
+        "roc_auc_secondary": 0.9965253610226883,
+        "alert_budget_rate": 0.01,
+        "alert_budget_count": 811,
+        "precision_at_alert_budget": 0.9321824907521579,
+        "recall_at_alert_budget": 0.7213740458015268
+      },
+      "whole_validation": {
+        "n_total": 80316,
+        "n_fraud": 792,
+        "n_legitimate": 79524,
+        "fraud_prevalence": 0.009861048857014791,
+        "threshold": 0.5,
+        "n_alerts": 4778,
+        "confusion_matrix": {
+          "tn": 75527,
+          "fp": 3997,
+          "fn": 11,
+          "tp": 781
+        },
+        "precision": 0.16345751360401842,
+        "recall": 0.9861111111111112,
+        "fraud_capture_rate": 0.9861111111111112,
+        "false_positive_count": 3997,
+        "false_positive_rate": 0.05026155625974549,
+        "average_precision_pr_auc": 0.8869876379468931,
+        "roc_auc_secondary": 0.996766524710919,
+        "alert_budget_rate": 0.01,
+        "alert_budget_count": 803,
+        "precision_at_alert_budget": 0.8119551681195517,
+        "recall_at_alert_budget": 0.8232323232323232
+      }
+    }
+  },
+  "experiment_a_daily_full_baseline": {
+    "27": {
+      "n_total": 14661,
+      "n_fraud": 248,
+      "n_legitimate": 14413,
+      "fraud_rate": 0.016915626492053748,
+      "n_alerts": 248,
+      "confusion_matrix": {
+        "tp": 248,
+        "fp": 0,
+        "fn": 0,
+        "tn": 14413
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {},
+      "is_simulation_boundary_day": false
+    },
+    "28": {
+      "n_total": 54890,
+      "n_fraud": 260,
+      "n_legitimate": 54630,
+      "fraud_rate": 0.004736746219712151,
+      "n_alerts": 261,
+      "confusion_matrix": {
+        "tp": 260,
+        "fp": 1,
+        "fn": 0,
+        "tn": 54629
+      },
+      "precision": 0.9961685823754789,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {},
+      "is_simulation_boundary_day": false
+    },
+    "29": {
+      "n_total": 11287,
+      "n_fraud": 268,
+      "n_legitimate": 11019,
+      "fraud_rate": 0.023744130415522282,
+      "n_alerts": 268,
+      "confusion_matrix": {
+        "tp": 268,
+        "fp": 0,
+        "fn": 0,
+        "tn": 11019
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {},
+      "is_simulation_boundary_day": false
+    },
+    "30": {
+      "n_total": 272,
+      "n_fraud": 272,
+      "n_legitimate": 0,
+      "fraud_rate": 1.0,
+      "n_alerts": 272,
+      "confusion_matrix": {
+        "tp": 272,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": null,
+      "roc_auc_secondary": null,
+      "undefined_metrics_reasons": {
+        "average_precision_pr_auc": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+        "roc_auc_secondary": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+      },
+      "is_simulation_boundary_day": true
+    }
+  },
+  "experiment_b_daily_by_group": {
+    "FULL_BASELINE": {
+      "27": {
+        "n_total": 14661,
+        "n_fraud": 248,
+        "n_legitimate": 14413,
+        "fraud_rate": 0.016915626492053748,
+        "n_alerts": 248,
+        "confusion_matrix": {
+          "tp": 248,
+          "fp": 0,
+          "fn": 0,
+          "tn": 14413
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "28": {
+        "n_total": 54890,
+        "n_fraud": 260,
+        "n_legitimate": 54630,
+        "fraud_rate": 0.004736746219712151,
+        "n_alerts": 261,
+        "confusion_matrix": {
+          "tp": 260,
+          "fp": 1,
+          "fn": 0,
+          "tn": 54629
+        },
+        "precision": 0.9961685823754789,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "29": {
+        "n_total": 11287,
+        "n_fraud": 268,
+        "n_legitimate": 11019,
+        "fraud_rate": 0.023744130415522282,
+        "n_alerts": 268,
+        "confusion_matrix": {
+          "tp": 268,
+          "fp": 0,
+          "fn": 0,
+          "tn": 11019
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "30": {
+        "n_total": 272,
+        "n_fraud": 272,
+        "n_legitimate": 0,
+        "fraud_rate": 1.0,
+        "n_alerts": 272,
+        "confusion_matrix": {
+          "tp": 272,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "average_precision_pr_auc": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        },
+        "is_simulation_boundary_day": true
+      }
+    },
+    "BALANCE_REDUCED_FULL": {
+      "27": {
+        "n_total": 14661,
+        "n_fraud": 248,
+        "n_legitimate": 14413,
+        "fraud_rate": 0.016915626492053748,
+        "n_alerts": 866,
+        "confusion_matrix": {
+          "tp": 245,
+          "fp": 621,
+          "fn": 3,
+          "tn": 13792
+        },
+        "precision": 0.28290993071593534,
+        "recall": 0.9879032258064516,
+        "fraud_capture_rate": 0.9879032258064516,
+        "average_precision_pr_auc": 0.8862374136958499,
+        "roc_auc_secondary": 0.9960488738884923,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "28": {
+        "n_total": 54890,
+        "n_fraud": 260,
+        "n_legitimate": 54630,
+        "fraud_rate": 0.004736746219712151,
+        "n_alerts": 2781,
+        "confusion_matrix": {
+          "tp": 256,
+          "fp": 2525,
+          "fn": 4,
+          "tn": 52105
+        },
+        "precision": 0.0920532182668105,
+        "recall": 0.9846153846153847,
+        "fraud_capture_rate": 0.9846153846153847,
+        "average_precision_pr_auc": 0.8474496806202225,
+        "roc_auc_secondary": 0.9969607428997873,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "29": {
+        "n_total": 11287,
+        "n_fraud": 268,
+        "n_legitimate": 11019,
+        "fraud_rate": 0.023744130415522282,
+        "n_alerts": 992,
+        "confusion_matrix": {
+          "tp": 262,
+          "fp": 730,
+          "fn": 6,
+          "tn": 10289
+        },
+        "precision": 0.26411290322580644,
+        "recall": 0.9776119402985075,
+        "fraud_capture_rate": 0.9776119402985075,
+        "average_precision_pr_auc": 0.921468387724867,
+        "roc_auc_secondary": 0.9955924163554675,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "30": {
+        "n_total": 272,
+        "n_fraud": 272,
+        "n_legitimate": 0,
+        "fraud_rate": 1.0,
+        "n_alerts": 269,
+        "confusion_matrix": {
+          "tp": 269,
+          "fp": 0,
+          "fn": 3,
+          "tn": 0
+        },
+        "precision": 1.0,
+        "recall": 0.9889705882352942,
+        "fraud_capture_rate": 0.9889705882352942,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "average_precision_pr_auc": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        },
+        "is_simulation_boundary_day": true
+      }
+    }
+  },
+  "experiment_c_fraud_type_full_baseline": {
+    "CASH_OUT": {
+      "n_total": 26377,
+      "n_fraud": 524,
+      "n_legitimate": 25853,
+      "fraud_rate": 0.019865792167418583,
+      "n_alerts": 525,
+      "confusion_matrix": {
+        "tp": 524,
+        "fp": 1,
+        "fn": 0,
+        "tn": 25852
+      },
+      "precision": 0.9980952380952381,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {}
+    },
+    "TRANSFER": {
+      "n_total": 7993,
+      "n_fraud": 524,
+      "n_legitimate": 7469,
+      "fraud_rate": 0.0655573626923558,
+      "n_alerts": 524,
+      "confusion_matrix": {
+        "tp": 524,
+        "fp": 0,
+        "fn": 0,
+        "tn": 7469
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {}
+    }
+  },
+  "experiment_d_day_type_rows": [
+    {
+      "day_index": 27,
+      "type": "CASH_IN",
+      "transaction_count": 3576,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 27,
+      "type": "CASH_OUT",
+      "transaction_count": 4229,
+      "fraud_count": 124,
+      "fraud_rate": 0.02932135256561835,
+      "captured_fraud": 124,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 27,
+      "type": "DEBIT",
+      "transaction_count": 96,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 27,
+      "type": "PAYMENT",
+      "transaction_count": 5265,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 27,
+      "type": "TRANSFER",
+      "transaction_count": 1495,
+      "fraud_count": 124,
+      "fraud_rate": 0.08294314381270904,
+      "captured_fraud": 124,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 28,
+      "type": "CASH_IN",
+      "transaction_count": 12682,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 28,
+      "type": "CASH_OUT",
+      "transaction_count": 17965,
+      "fraud_count": 130,
+      "fraud_rate": 0.007236292791539103,
+      "captured_fraud": 130,
+      "missed_fraud": 0,
+      "false_positives": 1
+    },
+    {
+      "day_index": 28,
+      "type": "DEBIT",
+      "transaction_count": 462,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 28,
+      "type": "PAYMENT",
+      "transaction_count": 18433,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 28,
+      "type": "TRANSFER",
+      "transaction_count": 5348,
+      "fraud_count": 130,
+      "fraud_rate": 0.024308152580403888,
+      "captured_fraud": 130,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 29,
+      "type": "CASH_IN",
+      "transaction_count": 2419,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 29,
+      "type": "CASH_OUT",
+      "transaction_count": 4047,
+      "fraud_count": 134,
+      "fraud_rate": 0.033110946380034596,
+      "captured_fraud": 134,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 29,
+      "type": "DEBIT",
+      "transaction_count": 125,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 29,
+      "type": "PAYMENT",
+      "transaction_count": 3682,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "captured_fraud": 0,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 29,
+      "type": "TRANSFER",
+      "transaction_count": 1014,
+      "fraud_count": 134,
+      "fraud_rate": 0.13214990138067062,
+      "captured_fraud": 134,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 30,
+      "type": "CASH_OUT",
+      "transaction_count": 136,
+      "fraud_count": 136,
+      "fraud_rate": 1.0,
+      "captured_fraud": 136,
+      "missed_fraud": 0,
+      "false_positives": 0
+    },
+    {
+      "day_index": 30,
+      "type": "TRANSFER",
+      "transaction_count": 136,
+      "fraud_count": 136,
+      "fraud_rate": 1.0,
+      "captured_fraud": 136,
+      "missed_fraud": 0,
+      "false_positives": 0
+    }
+  ],
+  "experiment_e_balance_dependency": {
+    "FULL_BASELINE": {
+      "whole_test_period": {
+        "n_total": 81110,
+        "n_fraud": 1048,
+        "n_legitimate": 80062,
+        "fraud_prevalence": 0.012920724941437554,
+        "threshold": 0.5,
+        "n_alerts": 1049,
+        "confusion_matrix": {
+          "tn": 80061,
+          "fp": 1,
+          "fn": 0,
+          "tp": 1048
+        },
+        "precision": 0.9990467111534795,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "false_positive_count": 1,
+        "false_positive_rate": 1.2490320001998452e-05,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "alert_budget_rate": 0.01,
+        "alert_budget_count": 811,
+        "precision_at_alert_budget": 1.0,
+        "recall_at_alert_budget": 0.773854961832061
+      },
+      "daily": {
+        "27": {
+          "n_total": 14661,
+          "n_fraud": 248,
+          "n_legitimate": 14413,
+          "fraud_rate": 0.016915626492053748,
+          "n_alerts": 248,
+          "confusion_matrix": {
+            "tp": 248,
+            "fp": 0,
+            "fn": 0,
+            "tn": 14413
+          },
+          "precision": 1.0,
+          "recall": 1.0,
+          "fraud_capture_rate": 1.0,
+          "average_precision_pr_auc": 1.0,
+          "roc_auc_secondary": 1.0,
+          "undefined_metrics_reasons": {},
+          "is_simulation_boundary_day": false
+        },
+        "28": {
+          "n_total": 54890,
+          "n_fraud": 260,
+          "n_legitimate": 54630,
+          "fraud_rate": 0.004736746219712151,
+          "n_alerts": 261,
+          "confusion_matrix": {
+            "tp": 260,
+            "fp": 1,
+            "fn": 0,
+            "tn": 54629
+          },
+          "precision": 0.9961685823754789,
+          "recall": 1.0,
+          "fraud_capture_rate": 1.0,
+          "average_precision_pr_auc": 1.0,
+          "roc_auc_secondary": 1.0,
+          "undefined_metrics_reasons": {},
+          "is_simulation_boundary_day": false
+        },
+        "29": {
+          "n_total": 11287,
+          "n_fraud": 268,
+          "n_legitimate": 11019,
+          "fraud_rate": 0.023744130415522282,
+          "n_alerts": 268,
+          "confusion_matrix": {
+            "tp": 268,
+            "fp": 0,
+            "fn": 0,
+            "tn": 11019
+          },
+          "precision": 1.0,
+          "recall": 1.0,
+          "fraud_capture_rate": 1.0,
+          "average_precision_pr_auc": 1.0,
+          "roc_auc_secondary": 1.0,
+          "undefined_metrics_reasons": {},
+          "is_simulation_boundary_day": false
+        },
+        "30": {
+          "n_total": 272,
+          "n_fraud": 272,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 272,
+          "confusion_matrix": {
+            "tp": 272,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 1.0,
+          "fraud_capture_rate": 1.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": true
+        }
+      }
+    },
+    "BALANCE_REDUCED_FULL": {
+      "whole_test_period": {
+        "n_total": 81110,
+        "n_fraud": 1048,
+        "n_legitimate": 80062,
+        "fraud_prevalence": 0.012920724941437554,
+        "threshold": 0.5,
+        "n_alerts": 4908,
+        "confusion_matrix": {
+          "tn": 76186,
+          "fp": 3876,
+          "fn": 16,
+          "tp": 1032
+        },
+        "precision": 0.21026894865525672,
+        "recall": 0.9847328244274809,
+        "fraud_capture_rate": 0.9847328244274809,
+        "false_positive_count": 3876,
+        "false_positive_rate": 0.048412480327746,
+        "average_precision_pr_auc": 0.8889201633936458,
+        "roc_auc_secondary": 0.9965253610226883,
+        "alert_budget_rate": 0.01,
+        "alert_budget_count": 811,
+        "precision_at_alert_budget": 0.9321824907521579,
+        "recall_at_alert_budget": 0.7213740458015268
+      },
+      "daily": {
+        "27": {
+          "n_total": 14661,
+          "n_fraud": 248,
+          "n_legitimate": 14413,
+          "fraud_rate": 0.016915626492053748,
+          "n_alerts": 866,
+          "confusion_matrix": {
+            "tp": 245,
+            "fp": 621,
+            "fn": 3,
+            "tn": 13792
+          },
+          "precision": 0.28290993071593534,
+          "recall": 0.9879032258064516,
+          "fraud_capture_rate": 0.9879032258064516,
+          "average_precision_pr_auc": 0.8862374136958499,
+          "roc_auc_secondary": 0.9960488738884923,
+          "undefined_metrics_reasons": {},
+          "is_simulation_boundary_day": false
+        },
+        "28": {
+          "n_total": 54890,
+          "n_fraud": 260,
+          "n_legitimate": 54630,
+          "fraud_rate": 0.004736746219712151,
+          "n_alerts": 2781,
+          "confusion_matrix": {
+            "tp": 256,
+            "fp": 2525,
+            "fn": 4,
+            "tn": 52105
+          },
+          "precision": 0.0920532182668105,
+          "recall": 0.9846153846153847,
+          "fraud_capture_rate": 0.9846153846153847,
+          "average_precision_pr_auc": 0.8474496806202225,
+          "roc_auc_secondary": 0.9969607428997873,
+          "undefined_metrics_reasons": {},
+          "is_simulation_boundary_day": false
+        },
+        "29": {
+          "n_total": 11287,
+          "n_fraud": 268,
+          "n_legitimate": 11019,
+          "fraud_rate": 0.023744130415522282,
+          "n_alerts": 992,
+          "confusion_matrix": {
+            "tp": 262,
+            "fp": 730,
+            "fn": 6,
+            "tn": 10289
+          },
+          "precision": 0.26411290322580644,
+          "recall": 0.9776119402985075,
+          "fraud_capture_rate": 0.9776119402985075,
+          "average_precision_pr_auc": 0.921468387724867,
+          "roc_auc_secondary": 0.9955924163554675,
+          "undefined_metrics_reasons": {},
+          "is_simulation_boundary_day": false
+        },
+        "30": {
+          "n_total": 272,
+          "n_fraud": 272,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 269,
+          "confusion_matrix": {
+            "tp": 269,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 0.9889705882352942,
+          "fraud_capture_rate": 0.9889705882352942,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": true
+        }
+      }
+    }
+  }
+}

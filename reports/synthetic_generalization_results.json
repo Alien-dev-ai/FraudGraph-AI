@@ -1,0 +1,1047 @@
+{
+  "smoke_test": {
+    "max_rows": 300000,
+    "chunksize": 200000,
+    "stream_stats": {
+      "rows_seen": 300000,
+      "rows_by_split": {
+        "train": 300000,
+        "validation": 0,
+        "test": 0
+      },
+      "fraud_by_split": {
+        "train": 181,
+        "validation": 0,
+        "test": 0
+      },
+      "rows_outside_policy": 0
+    },
+    "test_rows_available": 0,
+    "model_fit_on_smoke_sample": true,
+    "scenario_exercised": false,
+    "source_rows_selected": 0,
+    "original_values_unchanged": null,
+    "runtime_seconds": 6.11,
+    "rss_before_mb": 136.4,
+    "peak_rss_mb": 546.3,
+    "safety_limit_mb": 8000,
+    "within_safety_limit": true
+  },
+  "csv_path": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "chunksize": 200000,
+  "max_rows": null,
+  "runtime_seconds": 132.86,
+  "peak_rss_mb": 5703.1,
+  "threshold": 0.5,
+  "random_state": 42,
+  "split_policy_name": "chronological_train_val_test",
+  "split_day_ranges": {
+    "train": [
+      0,
+      23
+    ],
+    "validation": [
+      24,
+      26
+    ],
+    "test": [
+      27,
+      30
+    ]
+  },
+  "test_day_range": [
+    27,
+    30
+  ],
+  "simulation_boundary_day": 30,
+  "source_days": [
+    27,
+    28,
+    29
+  ],
+  "source_types": [
+    "CASH_OUT",
+    "TRANSFER"
+  ],
+  "sample_per_cell": 500,
+  "residual_fraction": 0.05,
+  "dominant_balance_features": [
+    "orig_balance_mismatch",
+    "orig_balance_after_zero"
+  ],
+  "neutral_values": {
+    "orig_balance_mismatch": 1.0,
+    "orig_balance_after_zero": 1.0
+  },
+  "source_cell_counts": {
+    "day27_CASH_OUT": 500,
+    "day27_TRANSFER": 500,
+    "day28_CASH_OUT": 500,
+    "day28_TRANSFER": 500,
+    "day29_CASH_OUT": 500,
+    "day29_TRANSFER": 500
+  },
+  "source_rows_total": 3000,
+  "source_rows_unchanged_after_all_scenarios": true,
+  "day_30_synthetic_note": "Day 30 has zero legitimate CASH_OUT/TRANSFER test rows (100% fraud -- Milestone 4/9 simulation-boundary artifact), so no synthetic example can be sourced from it. Every scenario's 'daily' breakdown below still contains an explicit day-30 entry (n_total=0, every metric null with a documented reason) via src.robustness_analysis.daily_breakdown's unconditional iteration over all four test-period days -- this is a mechanical consequence of source-row availability, not an omission.",
+  "train_rows": 6201194,
+  "train_fraud": 6373,
+  "test_rows": 81110,
+  "test_fraud": 1048,
+  "stream_stats": {
+    "rows_seen": 6362620,
+    "rows_by_split": {
+      "train": 6201194,
+      "validation": 80316,
+      "test": 81110
+    },
+    "fraud_by_split": {
+      "train": 6373,
+      "validation": 792,
+      "test": 1048
+    },
+    "rows_outside_policy": 0
+  },
+  "baseline_reproduction_check": {
+    "recomputed": {
+      "n_total": 81110,
+      "n_fraud": 1048,
+      "n_legitimate": 80062,
+      "fraud_rate": 0.012920724941437554,
+      "n_alerts": 1049,
+      "confusion_matrix": {
+        "tp": 1048,
+        "fp": 1,
+        "fn": 0,
+        "tn": 80061
+      },
+      "precision": 0.9990467111534795,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {}
+    },
+    "recorded_m12_full_baseline": {
+      "n_total": 81110,
+      "n_fraud": 1048,
+      "n_legitimate": 80062,
+      "fraud_prevalence": 0.012920724941437554,
+      "threshold": 0.5,
+      "n_alerts": 1049,
+      "confusion_matrix": {
+        "tn": 80061,
+        "fp": 1,
+        "fn": 0,
+        "tp": 1048
+      },
+      "precision": 0.9990467111534795,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "false_positive_count": 1,
+      "false_positive_rate": 1.2490320001998452e-05,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "alert_budget_rate": 0.01,
+      "alert_budget_count": 811,
+      "precision_at_alert_budget": 1.0,
+      "recall_at_alert_budget": 0.773854961832061
+    },
+    "matches_recorded_confusion_matrix_and_counts": true
+  },
+  "original_scenario": {
+    "whole_test_period": {
+      "n_total": 81110,
+      "n_fraud": 1048,
+      "n_legitimate": 80062,
+      "fraud_rate": 0.012920724941437554,
+      "n_alerts": 1049,
+      "confusion_matrix": {
+        "tp": 1048,
+        "fp": 1,
+        "fn": 0,
+        "tn": 80061
+      },
+      "precision": 0.9990467111534795,
+      "recall": 1.0,
+      "fraud_capture_rate": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "roc_auc_secondary": 1.0,
+      "undefined_metrics_reasons": {}
+    },
+    "daily": {
+      "27": {
+        "n_total": 14661,
+        "n_fraud": 248,
+        "n_legitimate": 14413,
+        "fraud_rate": 0.016915626492053748,
+        "n_alerts": 248,
+        "confusion_matrix": {
+          "tp": 248,
+          "fp": 0,
+          "fn": 0,
+          "tn": 14413
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 0.9999999999999999,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "28": {
+        "n_total": 54890,
+        "n_fraud": 260,
+        "n_legitimate": 54630,
+        "fraud_rate": 0.004736746219712151,
+        "n_alerts": 261,
+        "confusion_matrix": {
+          "tp": 260,
+          "fp": 1,
+          "fn": 0,
+          "tn": 54629
+        },
+        "precision": 0.9961685823754789,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "29": {
+        "n_total": 11287,
+        "n_fraud": 268,
+        "n_legitimate": 11019,
+        "fraud_rate": 0.023744130415522282,
+        "n_alerts": 268,
+        "confusion_matrix": {
+          "tp": 268,
+          "fp": 0,
+          "fn": 0,
+          "tn": 11019
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {},
+        "is_simulation_boundary_day": false
+      },
+      "30": {
+        "n_total": 272,
+        "n_fraud": 272,
+        "n_legitimate": 0,
+        "fraud_rate": 1.0,
+        "n_alerts": 272,
+        "confusion_matrix": {
+          "tp": 272,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "average_precision_pr_auc": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=272, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        },
+        "is_simulation_boundary_day": true
+      }
+    },
+    "by_type": {
+      "CASH_OUT": {
+        "n_total": 26377,
+        "n_fraud": 524,
+        "n_legitimate": 25853,
+        "fraud_rate": 0.019865792167418583,
+        "n_alerts": 525,
+        "confusion_matrix": {
+          "tp": 524,
+          "fp": 1,
+          "fn": 0,
+          "tn": 25852
+        },
+        "precision": 0.9980952380952381,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {}
+      },
+      "TRANSFER": {
+        "n_total": 7993,
+        "n_fraud": 524,
+        "n_legitimate": 7469,
+        "fraud_rate": 0.0655573626923558,
+        "n_alerts": 524,
+        "confusion_matrix": {
+          "tp": 524,
+          "fp": 0,
+          "fn": 0,
+          "tn": 7469
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "fraud_capture_rate": 1.0,
+        "average_precision_pr_auc": 1.0,
+        "roc_auc_secondary": 1.0,
+        "undefined_metrics_reasons": {}
+      }
+    }
+  },
+  "synthetic_scenarios": {
+    "A_behavioral_without_balance_signature": {
+      "recipes": [
+        "fresh_account",
+        "neutral_mismatch",
+        "neutral_after_zero"
+      ],
+      "synthetic_stress_label": 1,
+      "description": "Legitimate CASH_OUT/TRANSFER transaction made to look fraud-like purely via the fresh-account behavioral signature, with BOTH dominant balance features forced to their neutral/reference value -- isolates whether the model reacts to a non-balance behavioral anomaly alone.",
+      "n_examples": 3000,
+      "cell_counts": {
+        "day27_CASH_OUT": 500,
+        "day27_TRANSFER": 500,
+        "day28_CASH_OUT": 500,
+        "day28_TRANSFER": 500,
+        "day29_CASH_OUT": 500,
+        "day29_TRANSFER": 500
+      },
+      "whole_scenario": {
+        "n_total": 3000,
+        "n_fraud": 3000,
+        "n_legitimate": 0,
+        "fraud_rate": 1.0,
+        "n_alerts": 0,
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3000,
+          "tn": 0
+        },
+        "precision": null,
+        "recall": 0.0,
+        "fraud_capture_rate": 0.0,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+          "average_precision_pr_auc": "single-class slice (n_fraud=3000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=3000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        }
+      },
+      "daily": {
+        "27": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1000,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "28": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1000,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "29": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1000,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "30": {
+          "n_total": 0,
+          "n_fraud": 0,
+          "n_legitimate": 0,
+          "fraud_rate": null,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": true
+        }
+      },
+      "by_type": {
+        "CASH_OUT": {
+          "n_total": 1500,
+          "n_fraud": 1500,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1500,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        },
+        "TRANSFER": {
+          "n_total": 1500,
+          "n_fraud": 1500,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1500,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        }
+      }
+    },
+    "B_behavioral_with_normal_after_zero": {
+      "recipes": [
+        "fresh_account",
+        "neutral_after_zero"
+      ],
+      "synthetic_stress_label": 1,
+      "description": "Same fresh-account behavioral signature, but only `orig_balance_after_zero` is forced neutral; `orig_balance_mismatch` is left exactly as naturally observed on the source row (not forced either way).",
+      "n_examples": 3000,
+      "cell_counts": {
+        "day27_CASH_OUT": 500,
+        "day27_TRANSFER": 500,
+        "day28_CASH_OUT": 500,
+        "day28_TRANSFER": 500,
+        "day29_CASH_OUT": 500,
+        "day29_TRANSFER": 500
+      },
+      "whole_scenario": {
+        "n_total": 3000,
+        "n_fraud": 3000,
+        "n_legitimate": 0,
+        "fraud_rate": 1.0,
+        "n_alerts": 221,
+        "confusion_matrix": {
+          "tp": 221,
+          "fp": 0,
+          "fn": 2779,
+          "tn": 0
+        },
+        "precision": 1.0,
+        "recall": 0.07366666666666667,
+        "fraud_capture_rate": 0.07366666666666667,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "average_precision_pr_auc": "single-class slice (n_fraud=3000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=3000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        }
+      },
+      "daily": {
+        "27": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 64,
+          "confusion_matrix": {
+            "tp": 64,
+            "fp": 0,
+            "fn": 936,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 0.064,
+          "fraud_capture_rate": 0.064,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "28": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 68,
+          "confusion_matrix": {
+            "tp": 68,
+            "fp": 0,
+            "fn": 932,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 0.068,
+          "fraud_capture_rate": 0.068,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "29": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 89,
+          "confusion_matrix": {
+            "tp": 89,
+            "fp": 0,
+            "fn": 911,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 0.089,
+          "fraud_capture_rate": 0.089,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "30": {
+          "n_total": 0,
+          "n_fraud": 0,
+          "n_legitimate": 0,
+          "fraud_rate": null,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": true
+        }
+      },
+      "by_type": {
+        "CASH_OUT": {
+          "n_total": 1500,
+          "n_fraud": 1500,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 173,
+          "confusion_matrix": {
+            "tp": 173,
+            "fp": 0,
+            "fn": 1327,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 0.11533333333333333,
+          "fraud_capture_rate": 0.11533333333333333,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        },
+        "TRANSFER": {
+          "n_total": 1500,
+          "n_fraud": 1500,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 48,
+          "confusion_matrix": {
+            "tp": 48,
+            "fp": 0,
+            "fn": 1452,
+            "tn": 0
+          },
+          "precision": 1.0,
+          "recall": 0.032,
+          "fraud_capture_rate": 0.032,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "average_precision_pr_auc": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        }
+      }
+    },
+    "C_altered_balance_pattern": {
+      "recipes": [
+        "altered_balance_drain"
+      ],
+      "synthetic_stress_label": 1,
+      "description": "No behavioral change. `orig_balance_after` is overwritten to a small nonzero residual fraction of the preserved `orig_balance_before` -- a different balance-draining pattern than PaySim's own typical exact-zero signature -- with all dependent columns recomputed consistently.",
+      "n_examples": 3000,
+      "cell_counts": {
+        "day27_CASH_OUT": 500,
+        "day27_TRANSFER": 500,
+        "day28_CASH_OUT": 500,
+        "day28_TRANSFER": 500,
+        "day29_CASH_OUT": 500,
+        "day29_TRANSFER": 500
+      },
+      "whole_scenario": {
+        "n_total": 3000,
+        "n_fraud": 3000,
+        "n_legitimate": 0,
+        "fraud_rate": 1.0,
+        "n_alerts": 0,
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3000,
+          "tn": 0
+        },
+        "precision": null,
+        "recall": 0.0,
+        "fraud_capture_rate": 0.0,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+          "average_precision_pr_auc": "single-class slice (n_fraud=3000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=3000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        }
+      },
+      "daily": {
+        "27": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1000,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "28": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1000,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "29": {
+          "n_total": 1000,
+          "n_fraud": 1000,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1000,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1000, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "30": {
+          "n_total": 0,
+          "n_fraud": 0,
+          "n_legitimate": 0,
+          "fraud_rate": null,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": true
+        }
+      },
+      "by_type": {
+        "CASH_OUT": {
+          "n_total": 1500,
+          "n_fraud": 1500,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1500,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        },
+        "TRANSFER": {
+          "n_total": 1500,
+          "n_fraud": 1500,
+          "n_legitimate": 0,
+          "fraud_rate": 1.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1500,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": 0.0,
+          "fraud_capture_rate": 0.0,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=1500, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        }
+      }
+    },
+    "D_non_fraud_distractor": {
+      "recipes": [
+        "fresh_account"
+      ],
+      "synthetic_stress_label": 0,
+      "description": "Fresh-account behavioral signature applied to an otherwise perfectly ordinary legitimate transaction; both dominant balance features are left exactly as naturally observed (i.e. legitimate). Tests whether the model overreacts to the behavioral pattern alone, in the ABSENCE of the dominant PaySim balance signature.",
+      "n_examples": 3000,
+      "cell_counts": {
+        "day27_CASH_OUT": 500,
+        "day27_TRANSFER": 500,
+        "day28_CASH_OUT": 500,
+        "day28_TRANSFER": 500,
+        "day29_CASH_OUT": 500,
+        "day29_TRANSFER": 500
+      },
+      "whole_scenario": {
+        "n_total": 3000,
+        "n_fraud": 0,
+        "n_legitimate": 3000,
+        "fraud_rate": 0.0,
+        "n_alerts": 0,
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 3000
+        },
+        "precision": null,
+        "recall": null,
+        "fraud_capture_rate": null,
+        "average_precision_pr_auc": null,
+        "roc_auc_secondary": null,
+        "undefined_metrics_reasons": {
+          "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+          "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+          "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=3000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+          "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=3000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+        }
+      },
+      "daily": {
+        "27": {
+          "n_total": 1000,
+          "n_fraud": 0,
+          "n_legitimate": 1000,
+          "fraud_rate": 0.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 1000
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=1000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=1000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "28": {
+          "n_total": 1000,
+          "n_fraud": 0,
+          "n_legitimate": 1000,
+          "fraud_rate": 0.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 1000
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=1000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=1000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "29": {
+          "n_total": 1000,
+          "n_fraud": 0,
+          "n_legitimate": 1000,
+          "fraud_rate": 0.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 1000
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=1000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=1000) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": false
+        },
+        "30": {
+          "n_total": 0,
+          "n_fraud": 0,
+          "n_legitimate": 0,
+          "fraud_rate": null,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=0) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          },
+          "is_simulation_boundary_day": true
+        }
+      },
+      "by_type": {
+        "CASH_OUT": {
+          "n_total": 1500,
+          "n_fraud": 0,
+          "n_legitimate": 1500,
+          "fraud_rate": 0.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 1500
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=1500) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=1500) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        },
+        "TRANSFER": {
+          "n_total": 1500,
+          "n_fraud": 0,
+          "n_legitimate": 1500,
+          "fraud_rate": 0.0,
+          "n_alerts": 0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 1500
+          },
+          "precision": null,
+          "recall": null,
+          "fraud_capture_rate": null,
+          "average_precision_pr_auc": null,
+          "roc_auc_secondary": null,
+          "undefined_metrics_reasons": {
+            "precision": "undefined: no predicted positives in this slice (n_alerts=0)",
+            "recall": "undefined: no actual fraud in this slice (n_fraud=0)",
+            "average_precision_pr_auc": "single-class slice (n_fraud=0, n_legitimate=1500) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)",
+            "roc_auc_secondary": "single-class slice (n_fraud=0, n_legitimate=1500) -- PR-AUC/ROC-AUC are not meaningful with only one class present (PR-AUC would be trivially 1.0; ROC-AUC is mathematically undefined)"
+          }
+        }
+      }
+    }
+  }
+}

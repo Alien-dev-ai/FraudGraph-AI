@@ -1,0 +1,152 @@
+{
+  "generated_at": "2026-09-15T13:56:32.908940+00:00",
+  "source_file": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "row_count": 6362620,
+  "column_count": 11,
+  "status_summary": {
+    "pass": 8,
+    "issue": 0,
+    "expected_behavior": 1,
+    "not_applicable": 1
+  },
+  "genuine_issues_found": false,
+  "checks": [
+    {
+      "name": "schema_and_dtypes",
+      "status": "pass",
+      "expected_columns": [
+        "step",
+        "type",
+        "amount",
+        "nameOrig",
+        "oldbalanceOrg",
+        "newbalanceOrig",
+        "nameDest",
+        "oldbalanceDest",
+        "newbalanceDest",
+        "isFraud",
+        "isFlaggedFraud"
+      ],
+      "actual_columns": [
+        "step",
+        "type",
+        "amount",
+        "nameOrig",
+        "oldbalanceOrg",
+        "newbalanceOrig",
+        "nameDest",
+        "oldbalanceDest",
+        "newbalanceDest",
+        "isFraud",
+        "isFlaggedFraud"
+      ],
+      "dtype_mismatches": {},
+      "detail": "All expected columns present with expected dtype kinds."
+    },
+    {
+      "name": "row_count",
+      "status": "pass",
+      "row_count": 6362620,
+      "column_count": 11,
+      "detail": "Informational only; not a pass/fail check."
+    },
+    {
+      "name": "duplicate_rows",
+      "status": "pass",
+      "duplicate_row_count": 0,
+      "duplicate_row_pct": 0.0,
+      "detail": "No exact full-row duplicates found."
+    },
+    {
+      "name": "transaction_type_domain",
+      "status": "pass",
+      "valid_types": [
+        "CASH_IN",
+        "CASH_OUT",
+        "DEBIT",
+        "PAYMENT",
+        "TRANSFER"
+      ],
+      "observed_counts": {
+        "CASH_OUT": 2237500,
+        "PAYMENT": 2151495,
+        "CASH_IN": 1399284,
+        "TRANSFER": 532909,
+        "DEBIT": 41432
+      },
+      "invalid_types": [],
+      "detail": "All transaction types fall within the known PaySim domain."
+    },
+    {
+      "name": "nonnegative_amount_and_balance_fields",
+      "status": "pass",
+      "negative_value_counts": {
+        "amount": 0,
+        "oldbalanceOrg": 0,
+        "newbalanceOrig": 0,
+        "oldbalanceDest": 0,
+        "newbalanceDest": 0
+      },
+      "detail": "No negative amount or balance values found."
+    },
+    {
+      "name": "binary_flag_domain",
+      "status": "pass",
+      "columns_checked": [
+        "isFraud",
+        "isFlaggedFraud"
+      ],
+      "invalid_details": {},
+      "detail": "isFraud and isFlaggedFraud contain only 0/1 values."
+    },
+    {
+      "name": "missing_values",
+      "status": "pass",
+      "missing_value_counts": {
+        "step": 0,
+        "type": 0,
+        "amount": 0,
+        "nameOrig": 0,
+        "oldbalanceOrg": 0,
+        "newbalanceOrig": 0,
+        "nameDest": 0,
+        "oldbalanceDest": 0,
+        "newbalanceDest": 0,
+        "isFraud": 0,
+        "isFlaggedFraud": 0
+      },
+      "detail": "No missing values in any column."
+    },
+    {
+      "name": "balance_consistency",
+      "status": "expected_behavior",
+      "merchant_destination_accounts": 2151495,
+      "merchant_destination_zero_balance_pct": 100.0,
+      "origin_balance_equation_mismatch_count": 3601595,
+      "origin_balance_equation_mismatch_pct": 56.6055,
+      "origin_balance_equation_mismatch_by_fraud_label": {
+        "0": 3601550,
+        "1": 45
+      },
+      "destination_balance_equation_mismatch_count_nonmerchant": 1672403,
+      "destination_balance_equation_mismatch_pct_nonmerchant": 39.7139,
+      "detail": "Merchant destination accounts (nameDest starting with 'M') have balances of 0 by design \u2014 PaySim does not simulate merchant balances. The origin-side check is direction-aware (CASH_IN adds funds, all other types remove them). Even so, a large share of rows still show newBalance != oldBalance +/- amount (including the well-documented 'both balances reported as zero' pattern, and non-merchant destination balances that visibly do not track oldbalanceDest + amount, e.g. for CASH_IN). This lack of strict balance conservation is a widely documented PaySim simulator characteristic, not evidence of a corrupted raw file. Reported here as diagnostic statistics only \u2014 no derived columns are persisted."
+    },
+    {
+      "name": "account_id_prefix_convention",
+      "status": "pass",
+      "invalid_origin_prefix_count": 0,
+      "destination_prefix_counts": {
+        "C": 4211125,
+        "M": 2151495
+      },
+      "unexpected_destination_prefixes": [],
+      "detail": "All origin accounts start with 'C' and all destination accounts start with 'C' or 'M', as expected by PaySim convention."
+    },
+    {
+      "name": "duplicate_transaction_id",
+      "status": "not_applicable",
+      "detail": "Raw PaySim has no explicit transaction-id column, only step/account/amount fields. A true duplicate-transaction-id check cannot be meaningfully applied; exact full-row duplication is covered separately by 'duplicate_rows'."
+    }
+  ]
+}

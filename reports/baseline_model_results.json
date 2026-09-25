@@ -1,0 +1,342 @@
+{
+  "smoke_test": {
+    "max_rows": 300000,
+    "chunksize": 200000,
+    "stream_stats": {
+      "rows_seen": 300000,
+      "rows_by_split": {
+        "train": 300000,
+        "validation": 0,
+        "test": 0
+      },
+      "fraud_by_split": {
+        "train": 181,
+        "validation": 0,
+        "test": 0
+      },
+      "rows_outside_policy": 0
+    },
+    "runtime_seconds": 5.77,
+    "peak_rss_mb": 554.2,
+    "rss_before_mb": 136.0,
+    "train_rows_available": 300000,
+    "model_trained_on_smoke_sample": true,
+    "safety_limit_mb": 8000,
+    "within_safety_limit": true
+  },
+  "sanity_checks": {
+    "passed": true,
+    "checked_against_full_dataset_audit": true
+  },
+  "csv_path": "/Users/macbook/FraudAi/data/raw/archive/paysim_orig/synthetic_financial_datasets_fraud_detection.csv",
+  "chunksize": 200000,
+  "max_rows": null,
+  "runtime_seconds": 143.46,
+  "peak_rss_mb": 7004.2,
+  "stream_stats": {
+    "rows_seen": 6362620,
+    "rows_by_split": {
+      "train": 6201194,
+      "validation": 80316,
+      "test": 81110
+    },
+    "fraud_by_split": {
+      "train": 6373,
+      "validation": 792,
+      "test": 1048
+    },
+    "rows_outside_policy": 0
+  },
+  "split_policy_name": "chronological_train_val_test",
+  "split_day_ranges": {
+    "train": [
+      0,
+      23
+    ],
+    "validation": [
+      24,
+      26
+    ],
+    "test": [
+      27,
+      30
+    ]
+  },
+  "feature_columns": [
+    "hour_of_day",
+    "type_CASH_IN",
+    "type_CASH_OUT",
+    "type_DEBIT",
+    "type_PAYMENT",
+    "type_TRANSFER",
+    "amount",
+    "log_amount",
+    "isFlaggedFraud",
+    "is_dest_merchant",
+    "orig_balance_before",
+    "orig_balance_after",
+    "dest_balance_before",
+    "dest_balance_after",
+    "orig_balance_delta",
+    "dest_balance_delta",
+    "amount_to_orig_balance_ratio",
+    "amount_to_dest_balance_ratio",
+    "orig_balance_before_zero",
+    "orig_balance_after_zero",
+    "dest_balance_before_zero",
+    "dest_balance_after_zero",
+    "orig_balance_mismatch",
+    "dest_balance_mismatch",
+    "origin_txn_count_causal",
+    "origin_total_amount_causal",
+    "origin_avg_amount_causal",
+    "origin_is_first_seen",
+    "dest_txn_count_causal",
+    "dest_total_amount_causal",
+    "dest_avg_amount_causal",
+    "dest_is_first_seen",
+    "amount_vs_origin_avg_ratio",
+    "amount_vs_dest_avg_ratio",
+    "origin_out_degree_causal",
+    "dest_in_degree_causal",
+    "origin_seen_as_dest_before_causal",
+    "dest_seen_as_origin_before_causal",
+    "dest_incoming_concentration_causal"
+  ],
+  "feature_count": 39,
+  "preprocessing": {
+    "imputer": {
+      "class": "SimpleImputer",
+      "strategy": "median",
+      "fit_on": "train_only"
+    },
+    "scaler": {
+      "class": "StandardScaler",
+      "fit_on": "train_only"
+    }
+  },
+  "model": {
+    "class": "sklearn.linear_model.LogisticRegression",
+    "params": {
+      "l1_ratio": 0.0,
+      "C": 1.0,
+      "class_weight": "balanced",
+      "max_iter": 1000,
+      "solver": "lbfgs",
+      "random_state": 42
+    },
+    "hyperparameter_tuning_performed": false,
+    "threshold_tuning_performed": false,
+    "resampling_performed": false
+  },
+  "train_rows": 6201194,
+  "train_fraud": 6373,
+  "validation": {
+    "n_total": 80316,
+    "n_fraud": 792,
+    "n_legitimate": 79524,
+    "fraud_prevalence": 0.009861048857014791,
+    "threshold": 0.5,
+    "n_alerts": 794,
+    "confusion_matrix": {
+      "tn": 79522,
+      "fp": 2,
+      "fn": 0,
+      "tp": 792
+    },
+    "precision": 0.9974811083123426,
+    "recall": 1.0,
+    "fraud_capture_rate": 1.0,
+    "false_positive_count": 2,
+    "false_positive_rate": 2.514964036014285e-05,
+    "average_precision_pr_auc": 1.0,
+    "roc_auc_secondary": 1.0,
+    "alert_budget_rate": 0.01,
+    "alert_budget_count": 803,
+    "precision_at_alert_budget": 0.9863013698630136,
+    "recall_at_alert_budget": 1.0
+  },
+  "test": {
+    "n_total": 81110,
+    "n_fraud": 1048,
+    "n_legitimate": 80062,
+    "fraud_prevalence": 0.012920724941437554,
+    "threshold": 0.5,
+    "n_alerts": 1049,
+    "confusion_matrix": {
+      "tn": 80061,
+      "fp": 1,
+      "fn": 0,
+      "tp": 1048
+    },
+    "precision": 0.9990467111534795,
+    "recall": 1.0,
+    "fraud_capture_rate": 1.0,
+    "false_positive_count": 1,
+    "false_positive_rate": 1.2490320001998452e-05,
+    "average_precision_pr_auc": 1.0,
+    "roc_auc_secondary": 1.0,
+    "alert_budget_rate": 0.01,
+    "alert_budget_count": 811,
+    "precision_at_alert_budget": 1.0,
+    "recall_at_alert_budget": 0.773854961832061
+  },
+  "feature_importance": [
+    {
+      "feature": "orig_balance_mismatch",
+      "coefficient": -9.448261260986328
+    },
+    {
+      "feature": "orig_balance_after_zero",
+      "coefficient": 9.012395858764648
+    },
+    {
+      "feature": "orig_balance_before_zero",
+      "coefficient": 2.374161720275879
+    },
+    {
+      "feature": "type_CASH_OUT",
+      "coefficient": 1.9739969968795776
+    },
+    {
+      "feature": "dest_balance_before_zero",
+      "coefficient": 1.729682445526123
+    },
+    {
+      "feature": "type_PAYMENT",
+      "coefficient": -1.573831558227539
+    },
+    {
+      "feature": "is_dest_merchant",
+      "coefficient": -1.573831558227539
+    },
+    {
+      "feature": "type_CASH_IN",
+      "coefficient": -1.2593144178390503
+    },
+    {
+      "feature": "type_TRANSFER",
+      "coefficient": 1.1138330698013306
+    },
+    {
+      "feature": "isFlaggedFraud",
+      "coefficient": 0.8984016180038452
+    },
+    {
+      "feature": "dest_total_amount_causal",
+      "coefficient": 0.8525605201721191
+    },
+    {
+      "feature": "orig_balance_delta",
+      "coefficient": -0.7572899460792542
+    },
+    {
+      "feature": "dest_avg_amount_causal",
+      "coefficient": -0.7272366881370544
+    },
+    {
+      "feature": "log_amount",
+      "coefficient": 0.7156720161437988
+    },
+    {
+      "feature": "type_DEBIT",
+      "coefficient": -0.4353514611721039
+    },
+    {
+      "feature": "amount_to_orig_balance_ratio",
+      "coefficient": -0.3475842773914337
+    },
+    {
+      "feature": "dest_txn_count_causal",
+      "coefficient": -0.3357146084308624
+    },
+    {
+      "feature": "dest_in_degree_causal",
+      "coefficient": -0.3357146084308624
+    },
+    {
+      "feature": "dest_balance_before",
+      "coefficient": -0.331076443195343
+    },
+    {
+      "feature": "dest_balance_mismatch",
+      "coefficient": 0.33032581210136414
+    },
+    {
+      "feature": "dest_incoming_concentration_causal",
+      "coefficient": 0.3089789152145386
+    },
+    {
+      "feature": "dest_is_first_seen",
+      "coefficient": 0.30443817377090454
+    },
+    {
+      "feature": "hour_of_day",
+      "coefficient": -0.3016364574432373
+    },
+    {
+      "feature": "amount",
+      "coefficient": -0.28963711857795715
+    },
+    {
+      "feature": "dest_balance_after",
+      "coefficient": -0.2558276653289795
+    },
+    {
+      "feature": "dest_balance_delta",
+      "coefficient": 0.18431302905082703
+    },
+    {
+      "feature": "dest_seen_as_origin_before_causal",
+      "coefficient": -0.1465592086315155
+    },
+    {
+      "feature": "dest_balance_after_zero",
+      "coefficient": -0.08996894955635071
+    },
+    {
+      "feature": "origin_seen_as_dest_before_causal",
+      "coefficient": -0.05954362079501152
+    },
+    {
+      "feature": "amount_vs_dest_avg_ratio",
+      "coefficient": -0.055440422147512436
+    },
+    {
+      "feature": "orig_balance_after",
+      "coefficient": -0.04666759446263313
+    },
+    {
+      "feature": "origin_txn_count_causal",
+      "coefficient": -0.03892727568745613
+    },
+    {
+      "feature": "origin_out_degree_causal",
+      "coefficient": -0.03892727568745613
+    },
+    {
+      "feature": "origin_is_first_seen",
+      "coefficient": 0.038408063352108
+    },
+    {
+      "feature": "origin_total_amount_causal",
+      "coefficient": -0.028540680184960365
+    },
+    {
+      "feature": "origin_avg_amount_causal",
+      "coefficient": -0.025358930230140686
+    },
+    {
+      "feature": "orig_balance_before",
+      "coefficient": -0.011635549366474152
+    },
+    {
+      "feature": "amount_vs_origin_avg_ratio",
+      "coefficient": -0.01032564789056778
+    },
+    {
+      "feature": "amount_to_dest_balance_ratio",
+      "coefficient": 0.0014107991009950638
+    }
+  ]
+}
